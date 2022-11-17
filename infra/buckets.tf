@@ -1,11 +1,11 @@
-#========================CS_front_upload============================
+#========================CS_back_upload============================
 module "cs_back_upload" {
   source  = "terraform-google-modules/cloud-storage/google//modules/simple_bucket"
   version = "~> 1.3"
 
   # Required variables
   name       = local.cs-back-upload-name
-  project_id = var.cs_back_upload-project_id
+  project_id = var.project-id
   location   = var.cs_back_upload-location
 
   iam_members = [
@@ -21,7 +21,7 @@ module "cs_back_upload" {
 module "cs_front_static" {
   source        = "terraform-google-modules/cloud-storage/google"
   version       = "~> 2.2"
-  project_id    = var.cs-front-static-project_id
+  project_id    = var.project-id
   names         = var.cs-front-static-names
   storage_class = var.cs-front-static-storage_class
   #location   = "US"
@@ -37,8 +37,8 @@ module "cs_front_static" {
     not_found_page   = "error.html"
   }
 
-  bucket_admins = {
-    second = var.cs-front-static-second["user1"]
-    second = var.cs-front-static-second["user2"]
-  }
+  # bucket_admins = {
+  #   second = var.cs-front-static-second["user1"]
+  #   second = var.cs-front-static-second["user2"]
+  # }
 }

@@ -4,7 +4,7 @@ module "cr_back_api" {
 
   # Required variables
   service_name = local.cr-back-api-service_name
-  project_id   = var.cr-back-api-project_id
+  project_id   = var.project-id
   location     = var.cr-back-api-location
   image        = var.cr-back-api-image
   members      = [var.cr-back-api-members, ]

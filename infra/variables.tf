@@ -4,27 +4,27 @@ variable "product-name" {
   default = "fl"
 }
 
-variable "google-project" {
+variable "project-id" {
   type    = string
   default = "terraform-gcp-362210"
 }
 
-variable "google-region" {
+variable "env" {
+  type    = string
+  default = "stage"
+}
+
+variable "region" {
   type    = string
   default = "us-central1"
 }
 
-variable "google-zone" {
+variable "zone" {
   type    = string
   default = "us-central1-a"
 }
 
 #=====================CS_Back_Upload=====================
-variable "cs_back_upload-project_id" {
-  type    = string
-  default = "terraform-gcp-362210"
-}
-
 variable "cs_back_upload-location" {
   type    = string
   default = "us-central1"
@@ -39,11 +39,6 @@ variable "cs_back_upload-iam_members" {
 }
 
 #=====================CS_Front_Static====================
-variable "cs-front-static-project_id" {
-  type    = string
-  default = "terraform-gcp-362210"
-}
-
 variable "cs-front-static-names" {
   type    = list(string)
   default = ["petrosyangeorge.com", "admin.petrosyangeorge.com"]
@@ -78,11 +73,6 @@ variable "cs-front-static-second" {
 }
 
 #======================CR_Back_Api======================
-variable "cr-back-api-project_id" {
-  type    = string
-  default = "terraform-gcp-362210"
-}
-
 variable "cr-back-api-location" {
   type    = string
   default = "us-central1"
@@ -99,11 +89,6 @@ variable "cr-back-api-members" {
 }
 
 #======================CSQL_db_pg=======================
-variable "csql_db_pg-project_id" {
-  type    = string
-  default = "terraform-gcp-362210"
-}
-
 variable "csql_db_pg-database_version" {
   type    = string
   default = "POSTGRES_14"

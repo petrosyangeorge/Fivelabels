@@ -3,14 +3,14 @@ module "csql_db_pg" {
   version = "8.0.0"
 
   # Required variables
-  project_id          = var.csql_db_pg-project_id
+  project_id          = var.project-id
   name                = local.csql-db-pg-name
   database_version    = var.csql_db_pg-database_version
   deletion_protection = var.csql_db_pg-deletion_protection
   region              = var.csql_db_pg-region
   zone                = var.csql_db_pg-zone
   tier                = var.csql_db_pg-tier
-  create_timeout      = "20m"
+  create_timeout      = "25m"
   ip_configuration = {
     authorized_networks = [
       {
@@ -20,7 +20,7 @@ module "csql_db_pg" {
     ]
     ipv4_enabled       = true
     private_network    = null
-    require_ssl        = true
+    require_ssl        = false
     allocated_ip_range = null
   }
 
@@ -28,6 +28,4 @@ module "csql_db_pg" {
   user_password = var.csql_db_pg-user_password
 }
 
-/*resource "time_sleep" "wait_30_min" {
-  create_duration = "30m"
-}*/
+

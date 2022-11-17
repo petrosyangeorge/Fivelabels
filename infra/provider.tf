@@ -9,8 +9,7 @@ terraform {
 
 provider "google" {
   # Configuration options
-  project     = var.google-project
-  region      = var.google-region
-  zone        = var.google-zone
-  credentials = "keys.json"
+  project = var.project-id
+  region  = var.region
+  zone    = var.zone
 }
